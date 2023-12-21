@@ -7,3 +7,4 @@ leetcode, ds, algorithm, python pycharm
 [py code for DS](https://www.section.io/engineering-education/list-data-structure-python/)
 - [web scraping tutorial](https://realpython.com/python-web-scraping-practical-introduction/) | - [Automate Boring Stuff](https://automatetheboringstuff.com/2e/chapter12/)
 - [extract-m1txns-from-apexClearingSystems](https://bmeares.medium.com/how-i-automatically-extract-my-m1-finance-transactions-b43cef857bc7)
+- [leet-1267](https://github.com/Garvit244/Leetcode/blob/master/1200-1300q/1267.py)
