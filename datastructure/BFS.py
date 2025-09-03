@@ -10,6 +10,13 @@ graph = {
     'E': ['F'],
     'F': []
 }
+"""
+     A
+    / \
+  B     C
+  / \    \
+  D  E -- F
+"""
 
 def bfs(graph, start_node):
     """
@@ -47,3 +54,14 @@ def bfs(graph, start_node):
 print("Following is the Breadth-First Search traversal:")
 bfs(graph, 'A')
 # Expected output: A B C D E F
+
+# Example graph represented as an adjacency list in a dictionary
+graph2 = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+bfs(graph2, 'A')
