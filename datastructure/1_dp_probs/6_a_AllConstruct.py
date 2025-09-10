@@ -24,3 +24,30 @@ print("Edge case 2 (no solution):", allConstruct("hello", ["cat", "dog"]))      
 print("Edge case 3 (multiple ways):", allConstruct("purple", ["purp", "p", "ur", "le", "purpl"]))  # [['purp', 'le'], ['p', 'ur', 'p', 'le']]
 print("Edge case 4 (overlap/branch):", allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd", "ef", "c"]))  # [['ab', 'cd', 'ef'], ['ab', 'c', 'def'], ['abc', 'def'], ['abcd', 'ef']]
 print("Edge case 5 (long, but impossible):", allConstruct("eeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeee", "eeeee", "eeeeee"]))  # []
+
+"""
+
+WEEKLY GROCERY(ICCI)
+
+
+ICC:         
+BINDI | PIRKANGAI | SURAKAI | PAGARKAI
+MURUGANKAI | POOSANIKAI | VAZHA THANDU
+THENGAI | TINDORA | KARAMANI 
+CURRY LEAVES 
+PULSES:
+KONDA KADALAI, | RAGMA | KOLLU |
+VARAGU ARISI | 
+
+WALMART: ONIONS,TOMATOES,MILK, SPINACH
+POTATOES
+
+SPROUTS: CURD | NUTS | PLUM | SWEET POTATOES
+WEEK4(20-30)
+WEEK4(20-30)
+
+
+"""
+
+
+
