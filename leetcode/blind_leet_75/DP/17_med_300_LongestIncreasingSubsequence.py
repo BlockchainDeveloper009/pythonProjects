@@ -12,6 +12,12 @@ class Solution:
                     dp[i] = max(dp[i], dp[j] + 1)
 
         return max(dp)
+
+s = Solution()
+nums = [10,9,2,5,3,7,101,18]
+
+print(s.lengthOfLIS(nums))
+
 """
 300. Longest Increasing Subsequence
 Medium

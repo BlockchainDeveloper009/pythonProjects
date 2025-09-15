@@ -21,6 +21,10 @@ class Solution:
         # by any combination of coins, so return -1. Otherwise, return dp[amount].
         return dp[amount] if dp[amount] != float('inf') else -1
 
+s = Solution()
+coins = [1,2,5]
+amount = 11
+s.coinChange(coins, amount)
 
 """
 322. Coin Change

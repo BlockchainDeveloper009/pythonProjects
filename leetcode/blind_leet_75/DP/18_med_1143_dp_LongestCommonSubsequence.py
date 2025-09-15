@@ -15,7 +15,12 @@ class Solution:
 
         return dp[m][n]
 
-"""
+s = Solution()
+m1 = "abcde"
+n1 = "ace"
+print(s.longestCommonSubsequence(n1,m1))
+
+""" 
 1143. Longest Common Subsequence
 Medium
 Topics

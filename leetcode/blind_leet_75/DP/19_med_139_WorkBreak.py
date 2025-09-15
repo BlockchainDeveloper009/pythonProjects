@@ -18,6 +18,39 @@ class Solution:
 
         return dp[n]
 
+    def wordBreak_1(self, s: str, wordDict: list[str]) -> bool:
+        wordSet = set(wordDict)
+        dp = [False] * (len(s) + 1)
+        dp[0] = True  # Base case: empty string can always be segmented
+
+        # dp[i] indicates if s[:i] can be segmented
+        for i in range(1, len(s) + 1):
+            for j in range(i):
+
+                if j ==3:
+                    print('debug here')
+                # If s[j:i] is in wordSet and s[:j] can also be segmented
+                if dp[j] and s[j:i] in wordSet:
+                    dp[i] = True
+                    break
+        return dp[len(s)]
+
+s = Solution()
+s1 = "leetcode"
+wDict1 = ["leet", "code"]
+s.wordBreak_1(s1,wDict1)
+
+# s2 = "applepenapple"
+# wDict2 = ["apple", "pen"]
+# s.workBreak_1(s2,wDict2)
+#
+#
+#
+# s3 = "catsandog"
+# wDict3 = ["cats","dog","sand","and","cat"]
+# s.workBreak_1(s3,wDict3)
+
+
 
 """
 1143. Longest Common Subsequence

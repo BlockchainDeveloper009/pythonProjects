@@ -27,6 +27,10 @@ class Solution:
         # If the loop finishes and we haven't returned True, it means we couldn't reach the end.
         return False
 
+s = Solution()
+nums = [2,3,1,1,4]
+
+print(s.canJump(nums))
 
 """
 You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.

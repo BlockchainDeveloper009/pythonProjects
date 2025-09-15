@@ -24,6 +24,11 @@ class Solution:
         # The result is the number of unique paths to the bottom-right corner
         return dp[m - 1][n - 1]
 
+s = Solution()
+m = 3
+n = 7
+s.uniquePaths(m,n)
+
 
 """
 62. Unique Paths
