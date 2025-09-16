@@ -12,6 +12,14 @@ def lengthOfLongestSubstring(s: str) -> int:
         max_length = max(max_length, right - left + 1)
     return max_length
 
+testcases = ["abcabcbb" ,"bbbbb", "pwwkew" ]
+for test in testcases:
+    print('----')
+    print(test)
+    print(":")
+    print(lengthOfLongestSubstring(test))
+
+
 
 """
 3. Longest Substring Without Repeating Characters

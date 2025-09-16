@@ -74,11 +74,11 @@ lists = [build_list(arr) for arr in lists_arr]
 merged_heap = mergeKLists(lists)
 print_list(merged_heap)  # Output: [1,1,2,3,4,4,5,6]
 
-# Rebuild lists for divide and conquer since previous consumed them
-lists = [build_list(arr) for arr in lists_arr]
-
-merged_divide = mergeKListsDivideConquer(lists)
-print_list(merged_divide)  # Output: [1,1,2,3,4,4,5,6]
+# # Rebuild lists for divide and conquer since previous consumed them
+# lists = [build_list(arr) for arr in lists_arr]
+#
+# merged_divide = mergeKListsDivideConquer(lists)
+# print_list(merged_divide)  # Output: [1,1,2,3,4,4,5,6]
 
 
 """

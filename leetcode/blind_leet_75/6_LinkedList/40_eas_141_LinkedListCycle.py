@@ -1,23 +1,71 @@
+class ListNode:
+    # Definition for singly-linked list node.
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
+def hasCycle(head: ListNode) -> bool:
+    """
+    Detects if a linked list has a cycle using Floyd’s cycle detection algorithm.
+    Uses two pointers moving at different speeds.
+    """
+    slow, fast = head, head  # Initialize two pointers both at head
+    while fast and fast.next:
+        slow = slow.next          # Move slow pointer by 1 step
+        fast = fast.next.next     # Move fast pointer by 2 steps
 
-# Helper to build a cycle linked list for testing
+        # If slow and fast meet, there is a cycle
+        if slow == fast:
+            return True
+
+    # If fast reaches the end, no cycle in the list
+    return False
+
 def build_cycle_list(values, pos):
+    """
+    Builds a linked list from 'values' with an optional cycle.
+
+    Args:
+        values: List of node values.
+        pos: Position (0-index) where tail connects to form a cycle.
+             If pos is -1, no cycle is added.
+
+    Returns:
+        Head of the constructed linked list.
+    """
+    # Create nodes for all values
     nodes = [ListNode(v) for v in values]
-    for i in range(len(nodes)-1):
-        nodes[i].next = nodes[i+1]
-    if pos != -1:
+
+    # Link nodes in sequence
+    for i in range(len(nodes) - 1):
+        nodes[i].next = nodes[i + 1]
+
+    # If pos is valid, link last node to node at position pos to form cycle
+    if pos != -1 and nodes:
         nodes[-1].next = nodes[pos]
+
+    # Return head of the linked list (first node), or None if empty list
     return nodes[0] if nodes else None
 
-head1 = build_cycle_list([3,2,0,-4], 1)  # cycle linking to node with val=2
-print(hasCycle(head1))  # True
+# --- Testing ---
 
-head2 = build_cycle_list([1,2], 0)       # cycle linking to node with val=1
-print(hasCycle(head2))  # True
+# Test case 1:
+# List: 3 -> 2 -> 0 -> -4
+# Cycle: tail connects to node at index 1 (value 2)
+head1 = build_cycle_list([3, 2, 0, -4], 1)
+print(hasCycle(head1))  # Expected output: True (cycle present)
 
-head3 = build_cycle_list([1], -1)        # no cycle
-print(hasCycle(head3))  # False
+# Test case 2:
+# List: 1 -> 2
+# Cycle: tail connects back to node at index 0 (value 1)
+head2 = build_cycle_list([1, 2], 0)
+print(hasCycle(head2))  # Expected output: True (cycle present)
 
+# Test case 3:
+# List: 1 (single node)
+# Cycle: no cycle (pos = -1)
+head3 = build_cycle_list([1], -1)
+print(hasCycle(head3))  # Expected output: False (no cycle)
 
 """
 141. Linked List Cycle

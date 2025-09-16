@@ -17,6 +17,14 @@ def characterReplacement(s: str, k: int) -> int:
         result = max(result, right - left + 1)
     return result
 
+testcases = ["ABAB" ,"AABABBA", "pwwkew" ]
+for test in testcases:
+    print('----')
+    print(test)
+    print(":")
+    print(characterReplacement(test))
+
+
 
 """
 424. Longest Repeating Character Replacement
