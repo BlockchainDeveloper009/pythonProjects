@@ -9,6 +9,10 @@ class ListNode:
     def __lt__(self, other):  # for heap comparisons
         return self.val < other.val
 
+    # The __repr__ method provides a useful string for developers
+    def __repr__(self):
+        return f"ListNode(val={self.val}, next={self.next})"
+
 def mergeKLists(lists):
     min_heap = []
     for node in lists:
@@ -17,11 +21,12 @@ def mergeKLists(lists):
 
     dummy = ListNode()
     current = dummy
-
+    #print(vars(current))
     while min_heap:
         node = heapq.heappop(min_heap)
         current.next = node
         current = current.next
+       # print(vars(current))
         if node.next:
             heapq.heappush(min_heap, node.next)
 
@@ -67,9 +72,12 @@ def print_list(head):
     print(vals)
 
 
+#
+# lists_arr = [[1,4,5],[1,3,4],[2,6]]
+# lists = [build_list(arr) for arr in lists_arr]
 
-lists_arr = [[1,4,5],[1,3,4],[2,6]]
-lists = [build_list(arr) for arr in lists_arr]
+lists_arr2 = [[1,3,5],[2,4,6],[7,9,8]]
+lists = [build_list(arr) for arr in lists_arr2]
 
 merged_heap = mergeKLists(lists)
 print_list(merged_heap)  # Output: [1,1,2,3,4,4,5,6]

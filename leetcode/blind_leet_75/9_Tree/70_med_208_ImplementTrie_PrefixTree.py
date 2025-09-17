@@ -1,4 +1,57 @@
 
+class TrieNode:
+    def __init__(self):
+        # Each node has a dictionary of children, keys are characters
+        self.children = {}
+        # Flag to indicate if this node marks the end of a word
+        self.is_word = False
+
+class Trie:
+    def __init__(self):
+        # Root node is an empty TrieNode
+        self.root = TrieNode()
+
+    def insert(self, word: str) -> None:
+        """Insert a word into the trie."""
+        node = self.root
+        for char in word:
+            # If character not in children, create a new node
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        # Mark the end of the word
+        node.is_word = True
+
+    def search(self, word: str) -> bool:
+        """Return True if word is in trie, False otherwise."""
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        # Return True if current node marks the end of a word
+        return node.is_word
+
+    def startsWith(self, prefix: str) -> bool:
+        """Return True if any word in the trie starts with the prefix."""
+        node = self.root
+        for char in prefix:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        # If traversal was successful, prefix exists in the trie
+        return True
+
+# Example usage based on given example:
+trie = Trie()
+trie.insert("apple")
+print(trie.search("apple"))    # True
+print(trie.search("app"))      # False
+print(trie.startsWith("app"))  # True
+trie.insert("app")
+print(trie.search("app"))      # True
+
+
 """
 208. Implement Trie (Prefix Tree)
 Medium

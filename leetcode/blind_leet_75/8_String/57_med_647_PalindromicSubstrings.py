@@ -17,10 +17,6 @@ def countSubstrings(s: str) -> int:
 
     return count
 
-
-
-
-
 print(countSubstrings("abc"))  # 3 ("a", "b", "c")
 print(countSubstrings("aaa"))  # 6 ("a", "a", "a", "aa", "aa", "aaa")
 
