@@ -1,3 +1,4 @@
+from collections import deque
 class Node:
     """A single node in a binary tree."""
 
@@ -6,6 +7,24 @@ class Node:
         self.left = None
         self.right = None
 
+
+def level_order_traversal(root: Node) -> list[list[int]]:
+    res = []
+    queue = deque([root])
+    while len(queue)>0:
+        n = len(queue)
+        new_level = []
+        for _ in range(n):
+            node = queue.popleft()
+            new_level.append(node.val)
+            for child in [node.left, node.right]:
+                if child is not None:
+                    queue.append(child)
+        res.append(new_level)
+    return res
+
+def build_tree(nodes, f):
+    return ""
 
 def inorder_traversal(node):
     """

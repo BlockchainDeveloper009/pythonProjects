@@ -1,5 +1,10 @@
 from collections import deque
 
+"""
+1. a que for the current layer of exploration
+2. a loop to process each node
+3. a branching step where nodes are added to queu
+"""
 
 def bfs(graph, start):
     visited = set()  # Set to track visited nodes
@@ -30,3 +35,6 @@ graph = {
 }
 
 print("BFS Traversal Order:", bfs(graph, 'A'))
+"""
+BFS Traversal Order: ['A', 'B', 'C', 'D', 'E', 'F']
+"""
