@@ -1,4 +1,3 @@
-
 def lengthOfLongestSubstring(s: str) -> int:
     char_set = set()
     left = 0

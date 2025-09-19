@@ -1,4 +1,3 @@
-
 def countSubstrings(s: str) -> int:
     count = 0
 

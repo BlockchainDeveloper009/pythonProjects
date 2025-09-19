@@ -21,6 +21,9 @@ def hasCycle(head: ListNode) -> bool:
     # If fast reaches the end, no cycle in the list
     return False
 
+
+
+# Helper to build a cycle linked list for testing
 def build_cycle_list(values, pos):
     """
     Builds a linked list from 'values' with an optional cycle.
@@ -55,6 +58,8 @@ def build_cycle_list(values, pos):
 head1 = build_cycle_list([3, 2, 0, -4], 1)
 print(hasCycle(head1))  # Expected output: True (cycle present)
 
+head3 = build_cycle_list([1], -1)        # no cycle
+print(hasCycle(head3))  # False
 # Test case 2:
 # List: 1 -> 2
 # Cycle: tail connects back to node at index 0 (value 1)
