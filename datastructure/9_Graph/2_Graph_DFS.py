@@ -1,4 +1,5 @@
-def dfs(graph, node, visited=None, result=None):
+
+def dfs_recursive(graph, node, visited=None, result=None):
     if visited is None:
         visited = set()
     if result is None:
@@ -9,9 +10,24 @@ def dfs(graph, node, visited=None, result=None):
 
     for neighbor in graph.get(node, []):
         if neighbor not in visited:
-            dfs(graph, neighbor, visited, result)  # Recursive call on unvisited neighbors
+            dfs_recursive(graph, neighbor, visited, result)  # Recursive call on unvisited neighbors
 
     return result
+
+def dfs_hasPath_iterative(graph, node, dst)-> bool:
+    stack = [node]
+    result = []
+
+    while stack:
+        node = stack.pop()
+        if node == dst:
+            return True
+        result.append(node)
+        for neighbor in graph[node]:
+            stack.append(neighbor)
+
+
+    return False
 
 # Example graph as adjacency list (dict)
 graph = {
@@ -23,4 +39,4 @@ graph = {
     'F': []
 }
 
-print("DFS Traversal Order:", dfs(graph, 'A'))
+print("DFS Traversal Order:", dfs_recursive(graph, 'A'))

@@ -4,7 +4,11 @@ https://github.com/dipjul/Grokking-the-Coding-Interview-Patterns-for-Coding-Ques
 
 https://github.com/ashishps1/awesome-leetcode-resources/blob/main/patterns/python/top_k_elements.py
 
+## Videos:
+ - [freecodecamp___DSA and Algorithm pattersn for leetcode Interviews | dynamic | backtracking](https://www.youtube.com/watch?v=Z_c4byLrNBU&t=1397s)
 
+- [Super_Dynamicc programming_feecodecamp]()
+- [Super_Dynamicc programming_feecodecamp]()
 
 ## sliding_window_problems
 
@@ -31,10 +35,13 @@ input = [ 10, 20, 30, 40, 50, 0, 20]. Find index
 of the minimum element in this array
 [30, 40, 50, 0, 20]
 
-## BFS
-- FIFO queu is used
+## BFS - FIFO queue | visited Set() is used - | Undirected | 
+### when is it used?
+    - Shortest path betwen nodes 
+    
+    
 
-##  DFS
+##  DFS - Stack is used
 ### when is it used?
     - Explore every possibility 
     - Want to visit all nodes
@@ -50,6 +57,21 @@ of the minimum element in this array
     - Recursive traversal
     - Backtracking
 
+### A graph consists of:
+
+    Nodes (or vertices): The points in the graph.
+
+    Edges: The connections between the nodes.
+
+    Weights: A value assigned to each edge, often representing distance, time, or cost. A graph with weights is called a weighted graph. A graph without weights is an unweighted graph, where each edge can be considered to have a weight of 1.
+
+### The most common algorithms for solving the shortest path problem are:
+
+    Dijkstra's Algorithm: Used for graphs with non-negative edge weights.
+
+    Bellman-Ford Algorithm: Used for graphs that may have negative edge weights.
+
+    *A Search Algorithm:** A more efficient algorithm that uses heuristics to guide the search toward the goal node.
 
 ## Bactracking problems | Sudoku | WordSearch | Permutations_Combinations
     - Combinations, permutations, etc.
