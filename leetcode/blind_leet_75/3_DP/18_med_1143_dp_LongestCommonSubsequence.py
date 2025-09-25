@@ -18,7 +18,7 @@ class Solution:
 s = Solution()
 m1 = "abcde"
 n1 = "ace"
-print(s.longestCommonSubsequence(n1,m1))
+print(s.longestCommonSubsequence(m1,n1))
 
 """ 
 1143. Longest Common Subsequence

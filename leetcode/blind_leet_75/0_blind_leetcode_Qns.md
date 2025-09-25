@@ -65,8 +65,6 @@ Input: s = "cbbd"
 Output: "bb"
 
 ```
-
-
 Med.
 ### 5. _133. Clone Graph
 ```commandline
@@ -107,36 +105,64 @@ Explanation: There are 4 nodes in the graph.
 
 Med.
 ### 261. Graph Valid Tree
-49.5%
+49.5% Med.
 ```commandline
 
 ```
-Med.
+
 ### 647. Palindromic Substrings
-72.1%
+72.1% Med.
 
 ```commandline
 
 ```
-
-Med.
 ### 11. Container With Most Water
-58.4%
+58.4% Med.
 ```commandline
 You are given an integer array height of length n. There are n vertical 
 lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 
 Find two lines that together with the x-axis form a container, such that the container contains the most water.
 ```
-Med.
-### 139. Word Break
-48.6%
 
-Med.
+### 19.__ 139. Word Break
+48.6% Med.
 
+```
+139. Word Break
+
+Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
+
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+ 
+Example 1:
+
+Input: s = "leetcode", wordDict = ["leet","code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+
+Example 2:
+Input: s = "applepenapple", wordDict = ["apple","pen"]
+Output: true
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+Note that you are allowed to reuse a dictionary word.
+
+Example 3:
+Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
+Output: false
+
+Constraints:
+
+    1 <= s.length <= 300
+    1 <= wordDict.length <= 1000
+    1 <= wordDict[i].length <= 20
+    s and wordDict[i] consist of only lowercase English letters.
+    All the strings of wordDict are unique.
+
+```
 
 ### 40.__141. Linked List Cycle
-53.2%
+53.2% Easy
 ```commandline
 
 Given head, the head of a linked list, determine if the linked list has a cycle in it.
@@ -146,28 +172,25 @@ There is a cycle in a linked list if there is some node in the list that can be 
 Return true if there is a cycle in the linked list. Otherwise, return false.
 
 
-
 Example 1:
-
 Input: head = [3,2,0,-4], pos = 1
 Output: true
 Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
 
 ```
-Easy
-268. Missing Number
-70.8%
 
-Easy
-15. 3Sum
-37.7%
+### 268. Missing Number
+70.8% Easy
+
+```
+```
+### 20__ 15. 3Sum
+37.7% Med.
 ```
 
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
 Notice that the solution set must not contain duplicate triplets.
-
-
 
 Example 1:
 
@@ -181,9 +204,9 @@ The distinct triplets are [-1,0,1] and [-1,-1,2].
 Notice that the order of the output and the order of the triplets does not matter.
 
 ```
-Med.
+
 ### 44.---143. Reorder List
-63.4%
+63.4% Med.
 ```commandline
 
 You are given the head of a singly linked-list. The list can be represented as:
@@ -204,16 +227,19 @@ Input: head = [1,2,3,4]
 Output: [1,4,2,3]
 
 ```
-Med.
-269. Alien Dictionary
+
+### 269. Alien Dictionary
 36.8%
 
 Hard
-271. Encode and Decode Strings
+```
+```
+### 271. Encode and Decode Strings
 50.3%
-
 Med.
-19. Remove Nth Node From End of List
+```
+```
+### 19. Remove Nth Node From End of List
 49.9%
 
 ```commandline
@@ -229,10 +255,14 @@ Output: [1,2,3,5]
 ```
 
 Med.
-20. Valid Parentheses
+```
+```
+### 20. Valid Parentheses
 42.9%
 
 Easy
+```
+```
 21. Merge Two Sorted Lists
 67.3%
 ```commandline
@@ -242,16 +272,13 @@ Merge the two lists into one sorted list. The list should be made by splicing to
 
 Return the head of the merged linked list.
 
-
-
 Example 1:
 
 Input: list1 = [1,2,4], list2 = [1,3,4]
 Output: [1,1,2,3,4,4]
-
 ```
 Easy
-23. Merge k Sorted Lists
+### 23. Merge k Sorted Lists
 57.7%
 ```commandline
 You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
@@ -316,151 +343,338 @@ Output: [0,0,9,0,0]
 53.2%
 
 Med.
+```
+```
 ### 33. Search in Rotated Sorted Array
 43.4%
 
 Med.
+```
+```
 ### 417. Pacific Atlantic Water Flow
 58.1%
 
 Med.
+```
+
+```
 ### 39. Combination Sum
 75.4%
 
 Med.
+```
+```
 ### 295. Find Median from Data Stream
 53.7%
 
 Hard
+```
+```
 ### 297. Serialize and Deserialize Binary Tree
 59.6%
 
 Hard
+```
+```
 ### 424. Longest Repeating Character Replacement
 58.1%
 
-### Med.
-300. Longest Increasing Subsequence
+Med.
+```
+```
+### 300. Longest Increasing Subsequence
 58.4%
 
 Med.
+```
+```
 ### 48. Rotate Image
 78.6%
 
 Med.
+```
+```
 ### 49. Group Anagrams
 71.5%
 
 Med.
+```
+```
 ### 435. Non-overlapping Intervals
 56.1%
 
 Med.
+```
+```
 ### 53. Maximum Subarray
 52.5%
 
 Med.
+```
+```
 ### 54. Spiral Matrix
 55.0%
 
 Med.
+```
+```
 ### 55. Jump Game
 39.9%
 
 Med.
+```
+```
 ### 56. Merge Intervals
 50.0%
 
 Med.
+```
+```
 ### 57. Insert Interval
 44.0%
 
 Med.
-
+```
+```
 ### 572. Subtree of Another Tree
 50.6%
 
 Easy
+```
+```
 ### 62. Unique Paths
 66.1%
 
 Med.
+```
+```
 ### 190. Reverse Bits
 64.4%
 
 Easy
+```
+```
 ### 191. Number of 1 Bits
 75.3%
 
 Easy
+```
+```
 ### 322. Coin Change
 47.2%
 
 Med.
+```
+```
 ### 323. Number of Connected Components in an Undirected Graph
 64.4%
 
 Med.
+```
+```
 ### 70. Climbing Stairs
 53.7%
 
 Easy
-### 198. House Robber
+```
+```
+### 21.__ 198. House Robber
 52.6%
 
 Med.
-### 200. Number of Islands
+```
+https://medium.com/@pratham.kesarkar/leetcode-198-house-robber-cc3d13dcbaf7
+
+198. House Robber
+Medium
+Topics
+premium lock iconCompanies
+
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.
+
+Example 1:
+Input: nums = [1,2,3,1]
+Output: 4
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+```
+### 29. __ 200. Number of Islands
 63.0%
 
 Med.
+```commandline
+200. Number of Islands
+Medium
+Topics
+premium lock iconCompanies
+
+Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+
+
+Example 1:
+
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+
+Example 2:
+
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+
+```
 ### 73. Set Matrix Zeroes
 61.5%
 
 Med.
+```
+```
 ### 76. Minimum Window Substring
 46.1%
 
 Hard
-### 206. Reverse Linked List
+### 39.._ 206. Reverse Linked List
 79.7%
 
 Easy
+```
+
+Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+
+
+Example 1:
+
+Input: head = [1,2,3,4,5]
+Output: [5,4,3,2,1]
+
+```
 ### 79. Word Search
 46.0%
 
 Med.
+```
+```
 ### 207. Course Schedule
 50.0%
 
 Med.
+```
+```
 ### 208. Implement Trie (Prefix Tree)
 68.5%
 
 Med.
-### 338. Counting Bits
+```
+```
+### 11.. __ 338. Counting Bits
 80.1%
 
 Easy
+```
+Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.
+
+
+
+Example 1:
+
+Input: n = 2
+Output: [0,1,1]
+Explanation:
+0 --> 0
+1 --> 1
+2 --> 10
+
+```
 ### 211. Design Add and Search Words Data Structure
 47.5%
 
 Med.
+```
+```
 ### 212. Word Search II
 37.6%
 
 Hard
+```
+```
 ### 213. House Robber II
 44.1%
 
 Med.
+```
+
+Given an integer array nums representing the amount of money of each house, return the maximum amount of 
+money you can rob tonight without alerting the police.
+
+
+
+Example 1:
+
+Input: nums = [2,3,2]
+Output: 3
+Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2), because they are adjacent houses.
+
+```
 ### 217. Contains Duplicate
 63.6%
 
 Easy
+```
+```
 ### 91. Decode Ways
 37.0%
 
 Med.
+```
+
+You have intercepted a secret message encoded as a string of numbers. The message is decoded via the following mapping:
+
+"1" -> 'A'
+
+"2" -> 'B'
+
+...
+
+"25" -> 'Y'
+
+"26" -> 'Z'
+
+However, while decoding the message, you realize that there are many different ways you can decode the message because some codes are contained in other codes ("2" and "5" vs "25").
+
+For example, "11106" can be decoded into:
+
+    "AAJF" with the grouping (1, 1, 10, 6)
+    "KJF" with the grouping (11, 10, 6)
+    The grouping (1, 11, 06) is invalid because "06" is not a valid code (only "6" is valid).
+
+Note: there may be strings that are impossible to decode.
+
+Given a string s containing only digits, return the number of ways to decode it. If the entire string cannot be decoded in any valid way, return 0.
+
+The test cases are generated so that the answer fits in a 32-bit integer.
+
+
+
+Example 1:
+
+Input: s = "12"
+
+Output: 2
+```
 ### 347. Top K Frequent Elements
 64.8%
 
@@ -469,14 +683,19 @@ Med.
 52.3%
 
 Med.
+```
+```
 ### 98. Validate Binary Search Tree
 34.8%
 
 Med.
+```
+```
 ### 226. Invert Binary Tree
 79.4%
 
 Easy
+
 ```
 Given the root of a binary tree, invert the tree, and return its root.
 Example 1:
@@ -488,6 +707,8 @@ Output: [4,7,2,9,6,3,1]
 65.8%
 
 Easy
+```
+```
 ### 1143. Longest Common Subsequence
 58.5%
 
@@ -547,12 +768,15 @@ Output: 3
 77.5%
 
 Easy
-
+```
+```
 
 ### 105. Construct Binary Tree from Preorder and Inorder Traversal
 67.6%
 
 Med.
+```
+```
 ### 235. Lowest Common Ancestor of a Binary Search Tree
 69.2%
 
@@ -567,6 +791,8 @@ Med.
 68.1%
 
 Med.
+```
+```
 ### 242. Valid Anagram
 67.2%
 ```commandline
@@ -587,16 +813,38 @@ Easy
 54.3%
 
 Med.
+```
+```
 ### 252. Meeting Rooms
 59.1%
 
 Easy
+```
+```
 ### 121. Best Time to Buy and Sell Stock
 55.8%
 
 Easy
+```
+```
 ### 124. Binary Tree Maximum Path Sum
 41.6%
 
 Hard
-### 125. Valid Palindrome
+```
+```
+### 55. __ 125. Valid Palindrome
+```
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+Given a string s, return true if it is a palindrome, or false otherwise.
+
+
+
+Example 1:
+
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+```

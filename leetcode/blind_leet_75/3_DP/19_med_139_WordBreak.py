@@ -53,38 +53,40 @@ s.wordBreak_1(s1,wDict1)
 
 
 """
-1143. Longest Common Subsequence
-Medium
-Topics
-premium lock iconCompanies
-Hint
+139. Word Break
 
-Given two strings text1 and text2, return the length of their longest common subsequence. If there is no common subsequence, return 0.
+Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
 
-A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.
-
-    For example, "ace" is a subsequence of "abcde".
-
-A common subsequence of two strings is a subsequence that is common to both strings.
-
-
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+ 
 
 Example 1:
 
-Input: text1 = "abcde", text2 = "ace"
-Output: 3
-Explanation: The longest common subsequence is "ace" and its length is 3.
+Input: s = "leetcode", wordDict = ["leet","code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
 
 Example 2:
 
-Input: text1 = "abc", text2 = "abc"
-Output: 3
-Explanation: The longest common subsequence is "abc" and its length is 3.
+Input: s = "applepenapple", wordDict = ["apple","pen"]
+Output: true
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+Note that you are allowed to reuse a dictionary word.
 
 Example 3:
 
-Input: text1 = "abc", text2 = "def"
-Output: 0
-Explanation: There is no such common subsequence, so the result is 0.
+Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
+Output: false
+
+ 
+
+Constraints:
+
+    1 <= s.length <= 300
+    1 <= wordDict.length <= 1000
+    1 <= wordDict[i].length <= 20
+    s and wordDict[i] consist of only lowercase English letters.
+    All the strings of wordDict are unique.
+
 
 """
