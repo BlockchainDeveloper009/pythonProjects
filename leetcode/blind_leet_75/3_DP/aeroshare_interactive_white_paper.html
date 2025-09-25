@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroShare - The Future of Peer-to-Peer Book Sharing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFDFB;
+            color: #333333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .nav-link.active {
+            color: #5D7A9A;
+            font-weight: 600;
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #E0E0E0;
+            border: 3px solid #FDFDFB;
+            z-index: 1;
+        }
+         .roadmap-item.active::before {
+            background-color: #5D7A9A;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: The SPA is designed as an interactive, single-page narrative that guides the user through the project's vision. It starts with a hero section to capture interest, followed by a clear presentation of the problem using icons. The core solution is broken down into interactive cards. A key feature is the 'How It Works' section, an interactive HTML/CSS diagram explaining the P2P flow. Tokenomics are visualized with a Chart.js donut chart, and the project's future is shown on a clickable timeline. This thematic, non-linear structure with a sticky navigation bar is chosen over a static document layout to enhance user engagement, facilitate easy exploration of complex topics like DAO governance and tokenomics, and make the information more digestible and memorable for potential investors and community members. -->
+    <!-- Visualization & Content Choices:
+        - Problem Section: Report Info -> Issues with centralized platforms. Goal -> Inform quickly. Viz/Presentation -> Icon cards. Interaction -> None, purely visual. Justification -> Icons and short text are more scannable and impactful than dense paragraphs.
+        - Solution Section: Report Info -> Core platform features (Storage, Verification, Marketplace). Goal -> Explain features. Viz/Presentation -> Feature cards. Interaction -> Subtle hover effects. Justification -> Breaks down the solution into digestible parts.
+        - Tokenomics: Report Info -> Token utility and distribution. Goal -> Compare and inform. Viz/Presentation -> Chart.js Donut Chart. Interaction -> Hover tooltips on chart segments. Justification -> A donut chart is the standard and most effective way to show proportional distribution. Library/Method -> Chart.js (Canvas).
+        - How it Works Diagram: Report Info -> The P2P sharing and reward process. Goal -> Organize and explain a process. Viz/Presentation -> HTML/CSS flowchart. Interaction -> Hovering over a step updates a text panel with details. Justification -> Makes a complex process interactive and easy to follow without resorting to static images or complex libraries.
+        - Roadmap: Report Info -> Project phases. Goal -> Show change over time. Viz/Presentation -> Vertical Timeline. Interaction -> Clicking a phase reveals its details. Justification -> An interactive timeline is more engaging than a static list and provides a clear sense of progression.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#4A4A4A]">AeroShare</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#problem" class="nav-link text-gray-600 hover:text-[#5D7A9A] transition-colors">The Problem</a>
+                <a href="#solution" class="nav-link text-gray-600 hover:text-[#5D7A9A] transition-colors">Solution</a>
+                <a href="#tokenomics" class="nav-link text-gray-600 hover:text-[#5D7A9A] transition-colors">Tokenomics</a>
+                <a href="#roadmap" class="nav-link text-gray-600 hover:text-[#5D7A9A] transition-colors">Roadmap</a>
+                <a href="#tech" class="nav-link text-gray-600 hover:text-[#5D7A9A] transition-colors">Tech</a>
+            </div>
+            <a href="#" class="bg-[#5D7A9A] text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all">Join Community</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-[#4A4A4A] mb-4">The Future of Book Sharing is Here.</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Introducing AeroShare: a decentralized, community-owned ecosystem for sharing knowledge, where every contribution is rewarded.
+                </p>
+                <a href="#solution" class="bg-[#5D7A9A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition-all shadow-lg">Discover the Solution</a>
+            </div>
+        </section>
+
+        <section id="problem" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-[#4A4A4A] mb-2">The Problem with Centralized Platforms</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Today's digital content landscape is controlled by gatekeepers, creating risks and inequities for users and creators.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="text-4xl mb-4">⛓️</div>
+                        <h4 class="text-xl font-semibold mb-2">Centralization & Censorship</h4>
+                        <p class="text-gray-600">A single point of failure means content can be removed or censored at any time, without community consent.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="text-4xl mb-4">🛡️</div>
+                        <h4 class="text-xl font-semibold mb-2">Security & Privacy Risks</h4>
+                        <p class="text-gray-600">Centralized servers are prime targets for data breaches, compromising the privacy and security of millions of users.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="text-4xl mb-4">💸</div>
+                        <h4 class="text-xl font-semibold mb-2">Inequitable Value</h4>
+                        <p class="text-gray-600">The economic value generated by the community is captured by platform owners, not the users who create and curate the content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-[#4A4A4A] mb-2">The AeroShare Solution</h4>
+                    <p class="text-gray-600 max-w-2xl mx-auto">A decentralized application (dApp) that puts power back in the hands of the community.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <h4 class="text-xl font-bold text-[#5D7A9A] mb-3">Decentralized P2P Storage</h4>
+                        <p class="text-gray-600">Users share books directly from their devices. A distributed hash table (DHT) helps locate content across the network, making it resilient and censorship-resistant. Book metadata is secured on the blockchain.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <h4 class="text-xl font-bold text-[#5D7A9A] mb-3">Community-Driven Verification</h4>
+                        <p class="text-gray-600">A network of user "librarians" certifies books as safe and high-quality, earning reputation and token rewards. This builds a trusted, community-curated library without central moderators.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <h4 class="text-xl font-bold text-[#5D7A9A] mb-3">In-App Marketplace & DAO</h4>
+                        <p class="text-gray-600">Users can share for free or charge a small fee in AERO tokens. The entire ecosystem is governed by the AeroShare DAO, where token holders vote on the platform's future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl font-bold text-[#4A4A4A] mb-2">How It Works: An Interactive Flow</h4>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Hover over each step to see how the AeroShare ecosystem functions.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="w-full md:w-2/3">
+                        <div id="flow-diagram" class="space-y-4">
+                            <div class="flow-step p-4 border-2 border-dashed border-gray-300 rounded-lg text-center" data-info="1. A user decides to share a book from their device. The app generates a unique cryptographic hash of the file and registers its metadata on the blockchain.">
+                                📚 User Shares a Book
+                            </div>
+                            <div class="text-center text-2xl">↓</div>
+                            <div class="flow-step p-4 border-2 border-dashed border-gray-300 rounded-lg text-center" data-info="2. Other users in the network, acting as 'Librarians', can download and verify the book. If it's authentic and high-quality, they 'certify' it on-chain, earning reputation and AERO tokens.">
+                                🔍 Community Verifies Content
+                            </div>
+                            <div class="text-center text-2xl">↓</div>
+                            <div class="flow-step p-4 border-2 border-dashed border-gray-300 rounded-lg text-center" data-info="3. Another user discovers the verified book through the app. They initiate a direct peer-to-peer download from one of the sharers.">
+                                ⬇️ Peer Downloads the Book
+                            </div>
+                            <div class="text-center text-2xl">↓</div>
+                            <div class="flow-step p-4 border-2 border-dashed border-gray-300 rounded-lg text-center" data-info="4. The smart contract automatically rewards both the original sharer and the verifiers with AERO tokens for their contribution to the network's health and content library.">
+                                ✨ Sharers & Verifiers Earn Rewards
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 bg-white p-6 rounded-xl shadow-lg h-64 md:h-auto">
+                        <h4 class="font-bold text-lg mb-4">Step Details</h4>
+                        <p id="flow-info" class="text-gray-600 transition-opacity duration-300">Hover over a step in the diagram to learn more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tokenomics" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-[#4A4A4A] mb-2">AERO Tokenomics</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">The native utility token that powers the AeroShare ecosystem.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h4 class="text-2xl font-semibold mb-6">Token Utility</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 mt-1">✓</span>
+                                <div>
+                                    <h5 class="font-semibold">Rewards Engine</h5>
+                                    <p class="text-gray-600">Earn AERO for sharing books and verifying content, creating a vibrant, participatory economy.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-green-500 mr-3 mt-1">✓</span>
+                                <div>
+                                    <h5 class="font-semibold">DAO Governance</h5>
+                                    <p class="text-gray-600">Hold AERO to vote on proposals, from protocol upgrades to treasury allocation.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-green-500 mr-3 mt-1">✓</span>
+                                <div>
+                                    <h5 class="font-semibold">Transaction Medium</h5>
+                                    <p class="text-gray-600">Use AERO for all transactions within the in-app marketplace, creating a direct creator-to-consumer model.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="tokenomicsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl font-bold text-[#4A4A4A] mb-2">Project Roadmap</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Our phased approach to building a sustainable, community-driven platform.</p>
+                </div>
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 relative border-l-2 border-gray-200 pl-8 py-4">
+                        <div class="roadmap-item mb-12 cursor-pointer active" data-phase="1">
+                            <h4 class="text-xl font-semibold">Phase 1: MVP Launch</h4>
+                            <p class="text-gray-500">Q4 2025</p>
+                        </div>
+                        <div class="roadmap-item mb-12 cursor-pointer" data-phase="2">
+                            <h4 class="text-xl font-semibold">Phase 2: Token Launch</h4>
+                            <p class="text-gray-500">Q1 2026</p>
+                        </div>
+                        <div class="roadmap-item mb-12 cursor-pointer" data-phase="3">
+                            <h4 class="text-xl font-semibold">Phase 3: DAO Activation</h4>
+                            <p class="text-gray-500">Q3 2026</p>
+                        </div>
+                        <div class="roadmap-item cursor-pointer" data-phase="4">
+                            <h4 class="text-xl font-semibold">Phase 4: Ecosystem Expansion</h4>
+                            <p class="text-gray-500">2027+</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 bg-white p-8 rounded-xl shadow-lg mt-8 md:mt-0">
+                        <div id="roadmap-details">
+                            <div class="roadmap-content" data-phase="1">
+                                <h4 class="text-2xl font-bold mb-4">Phase 1: MVP Launch</h4>
+                                <p class="text-gray-600">Launch a closed beta with core P2P sharing functionality and a basic reputation system. Gather early user feedback to refine the core experience and prepare for a public launch.</p>
+                            </div>
+                            <div class="roadmap-content hidden" data-phase="2">
+                                <h4 class="text-2xl font-bold mb-4">Phase 2: Token Launch</h4>
+                                <p class="text-gray-600">Introduce the AERO token and implement the initial reward distribution model for sharers and verifiers. Launch a public version of the app on iOS and Android.</p>
+                            </div>
+                             <div class="roadmap-content hidden" data-phase="3">
+                                <h4 class="text-2xl font-bold mb-4">Phase 3: DAO Activation</h4>
+                                <p class="text-gray-600">Transition to full DAO governance. The community will gain control over the platform's treasury and development roadmap through on-chain voting.</p>
+                            </div>
+                            <div class="roadmap-content hidden" data-phase="4">
+                                <h4 class="text-2xl font-bold mb-4">Phase 4: Ecosystem Expansion</h4>
+                                <p class="text-gray-600">Expand beyond books to include other digital content types, such as audiobooks, academic papers, and independent comics. Explore cross-chain interoperability and Layer 2 scaling solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-[#4A4A4A] mb-2">Technical Architecture</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">A robust, scalable, and decentralized stack.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <div class="pt-4 md:pt-0 text-center px-4">
+                        <h4 class="font-bold text-lg mb-2">Frontend Layer</h4>
+                        <p class="text-gray-600">A cross-platform mobile app (iOS & Android) built with a modern framework for a fluid, native user experience.</p>
+                    </div>
+                    <div class="pt-4 md:pt-0 text-center px-4">
+                        <h4 class="font-bold text-lg mb-2">Peer-to-Peer Layer</h4>
+                        <p class="text-gray-600">A custom P2P protocol using a Distributed Hash Table (DHT) for efficient content discovery and end-to-end encrypted file transfers.</p>
+                    </div>
+                     <div class="pt-4 md:pt-0 text-center px-4">
+                        <h4 class="font-bold text-lg mb-2">Blockchain Layer</h4>
+                        <p class="text-gray-600">A scalable, low-cost blockchain for the immutable ledger of metadata and token transactions, with smart contracts automating rewards and governance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#333333] text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">Join the Revolution in Shared Knowledge</h3>
+            <p class="text-gray-400 mb-8">Be part of a community that's building a more open, equitable, and democratic future for digital content.</p>
+            <a href="#" class="bg-[#5D7A9A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">Join Our Discord</a>
+            <p class="text-gray-500 mt-8 text-sm">&copy; 2025 AeroShare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chartCtx = document.getElementById('tokenomicsChart').getContext('2d');
+            const tokenomicsChart = new Chart(chartCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Community Rewards', 'Treasury (DAO)', 'Team & Advisors', 'Public Sale'],
+                    datasets: [{
+                        label: 'AERO Token Distribution',
+                        data: [50, 25, 15, 10],
+                        backgroundColor: [
+                            '#5D7A9A',
+                            '#829AB1',
+                            '#A8B8C8',
+                            '#CFD8E2'
+                        ],
+                        borderColor: '#FDFDFB',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#4A4A4A',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            const flowSteps = document.querySelectorAll('.flow-step');
+            const flowInfo = document.getElementById('flow-info');
+            flowSteps.forEach(step => {
+                step.addEventListener('mouseover', () => {
+                    flowInfo.textContent = step.dataset.info;
+                });
+            });
+
+            const roadmapItems = document.querySelectorAll('.roadmap-item');
+            const roadmapContents = document.querySelectorAll('.roadmap-content');
+            roadmapItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const phase = item.dataset.phase;
+
+                    roadmapItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    roadmapContents.forEach(content => {
+                        if (content.dataset.phase === phase) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            function changeNavOnScroll() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', changeNavOnScroll);
+            changeNavOnScroll();
+        });
+    </script>
+</body>
+</html>

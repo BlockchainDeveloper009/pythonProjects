@@ -20,6 +20,10 @@ class Solution:
         # The final answer is the number of combinations that sum up to 'target'
         return dp[target]
 
+s = Solution()
+nums = [1,2,3]
+target = 4
+print(s.combinationSum4(nums, target))
 
 """
 377. Combination Sum IV

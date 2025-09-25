@@ -24,6 +24,15 @@ class Solution:
 
         return rob2
 
+nums = [
+[1,2,3,1],
+[2,7,9,3,1]
+]
+
+s = Solution()
+for arr in nums:
+    print(arr)
+    print(s.rob(arr))
 
 """
 https://medium.com/@pratham.kesarkar/leetcode-198-house-robber-cc3d13dcbaf7

@@ -5,18 +5,24 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+def lowestCommonAncestor(root: TreeNode,
+                         leftNode: TreeNode, rightNode: TreeNode) -> TreeNode:
     current = root
     while current:
-        if p.val < current.val and q.val < current.val:
+        if leftNode.val < current.val and rightNode.val < current.val:
             current = current.left
-        elif p.val > current.val and q.val > current.val:
+        elif leftNode.val > current.val and rightNode.val > current.val:
             current = current.right
         else:
             return current
-
+innermost = TreeNode(4, TreeNode(3), TreeNode(5))
 root = TreeNode(6,
-           TreeNode(2, TreeNode(0), TreeNode(4, TreeNode(3), TreeNode(5))),
+                #left
+                TreeNode(2,
+                         TreeNode(0),
+                         innermost
+     )
+                           ),
            TreeNode(8, TreeNode(7), TreeNode(9)))
 p = root.left           # Node 2
 q = root.right          # Node 8

@@ -1,11 +1,12 @@
 from collections import defaultdict
-
+from utils.metrics_time_helper import TimeHelper
 class Graph:
     def __init__(self, edges):
         """
         Initializes the graph with a list of edges.
         """
         self.graph = self._buildGraph(edges)
+
 
     def _buildGraph(self, edges):
         """
@@ -35,6 +36,7 @@ class Graph:
 
 
 
+
 testcase1 = [
     ['i', 'j', 'h'],
     ['k', 'i'],
@@ -42,9 +44,12 @@ testcase1 = [
     ['k', 'l'],
     ['o', 'n']
 ]
+mt = TimeHelper()
 
 # Create an instance of the Graph class
 my_graph = Graph(testcase1)
+
+mt.print_time_taken("time_t",mt.start_time)
 
 # Get and print the graph data
 print("Graph data (from get_graph method):")

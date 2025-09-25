@@ -31,6 +31,17 @@ class Solution:
 
         return max(max_without_last, max_without_first)
 
+nums = [
+[2,3,2],
+[1,2,3,1],
+[1,2,3]
+]
+
+s = Solution()
+print(s.rob([1,2,3,1]))
+# for arr in nums:
+#     print(arr)
+#     print(s.rob(arr))
 
 """
 213. House Robber II
@@ -39,9 +50,13 @@ Topics
 premium lock iconCompanies
 Hint
 
-You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police if two adjacent houses were broken into on the same night.
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed.
+ All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. 
+ Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police 
+ if two adjacent houses were broken into on the same night.
 
-Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.
+Given an integer array nums representing the amount of money of each house, return the maximum amount of 
+money you can rob tonight without alerting the police.
 
 
 

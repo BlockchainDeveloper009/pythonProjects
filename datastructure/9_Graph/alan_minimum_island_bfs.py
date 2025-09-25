@@ -79,16 +79,7 @@ grid = [
 #print(f"Minimum island size (BFS): {minimum_island_bfs(grid)}")
 
 
-# Measure the time for the BFS approach
-print("Measuring performance of BFS approach...")
-start_time_bfs = time.time()
-result_bfs = minimum_island_bfs(grid)
-end_time_bfs = time.time()
-duration_bfs = end_time_bfs - start_time_bfs
-
-print(f"BFS result: {result_bfs}")
-print(f"BFS duration: {duration_bfs:.6f} seconds")
-
+0
 
 """
 Measuring performance of BFS approach...

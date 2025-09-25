@@ -27,7 +27,12 @@ class Solution:
 s = Solution()
 m = 3
 n = 7
-s.uniquePaths(m,n)
+print(s.uniquePaths(m,n))
+
+m1 = 3
+n1 = 2
+print(s.uniquePaths(m1,n1))
+
 
 
 """

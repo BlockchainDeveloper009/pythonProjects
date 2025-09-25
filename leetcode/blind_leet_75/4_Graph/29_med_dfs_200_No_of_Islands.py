@@ -12,7 +12,7 @@ def numIslands(grid):
         grid[r][c] = '0'  # Mark visited by sinking island
         # Visit neighbors
         dfs(r + 1, c)
-        dfs(r - 1, c)
+        dfs(r - 1, c) 
         dfs(r, c + 1)
         dfs(r, c - 1)
 

@@ -1,5 +1,5 @@
 class Solution:
-    def numDecodings(self, s: str) -> int:
+     def numDecodings(self, s: str) -> int:
         n = len(s)
         # dp[i] will store the number of ways to decode the substring s[0...i-1]
         # We use n+1 size for dp array to handle base cases easily.
@@ -29,7 +29,13 @@ class Solution:
 s = Solution()
 s1 = "12"
 
-s.numDecodings(s1)
+print(s.numDecodings(s1))
+
+
+s2 = "226"
+
+print(s.numDecodings(s2))
+
 
 """
 91. Decode Ways
