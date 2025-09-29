@@ -3,7 +3,7 @@ from collections import deque, defaultdict
 
 def canFinish(numCourses, prerequisites):
     graph = defaultdict(list)
-    in_degree =  * numCourses
+    in_degree = 0 * numCourses
     for a, b in prerequisites:        # b -> a (to take 'a', need 'b' first)
         graph[b].append(a)
         in_degree[a] += 1

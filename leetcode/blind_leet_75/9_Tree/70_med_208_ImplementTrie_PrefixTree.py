@@ -1,4 +1,5 @@
 
+
 class TrieNode:
     def __init__(self):
         # Each node has a dictionary of children, keys are characters

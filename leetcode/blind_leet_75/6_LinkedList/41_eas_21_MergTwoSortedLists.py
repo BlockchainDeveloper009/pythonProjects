@@ -18,7 +18,11 @@ def mergeTwoLists(list1: ListNode, list2: ListNode) -> ListNode:
         current = current.next
 
     # Attach remaining nodes
-    current.next = list1 if list1 else list2
+    #current.next = list1 if list1 else list2
+    if list1:
+        current.next = list1
+    elif list2:
+        current.next = list2
 
     return dummy.next
 

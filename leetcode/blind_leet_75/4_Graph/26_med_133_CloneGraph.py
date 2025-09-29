@@ -1,4 +1,4 @@
-
+n
 class Node:
     def __init__(self, val: int = 0, neighbors=None):
         self.val = val

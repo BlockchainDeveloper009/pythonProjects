@@ -1,7 +1,7 @@
 def countConstruct(target, wordBank):
     # Create a table for dynamic programming.
     # table[i] will record the number of ways to build target[:i]
-    table =  * (len(target) + 1)
+    table =  0 * (len(target) + 1)
     table = 1  # There is 1 way to construct the empty string (using nothing)
 
     # Walk through each position in the target string
