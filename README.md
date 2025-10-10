@@ -2,6 +2,11 @@
 leetcode, ds, algorithm, python pycharm
 
 
+git config --global credential.helper store
+/home/hgk/.git-credential
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
 ### reference
 
 [py code for DS](https://www.section.io/engineering-education/list-data-structure-python/)

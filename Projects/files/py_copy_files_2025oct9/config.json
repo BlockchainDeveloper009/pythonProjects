@@ -1,0 +1,7 @@
+{
+  "sourceFolderA": "sourceA",
+  "sourceFolderB": "sourceB",
+  "destinationFolder": "destination",
+  "copyFilesFlag": true,
+  "logFolder": "logs"
+}
