@@ -25,6 +25,27 @@ def mergeKLists(lists):
 
     return dummy.next
 
+def mergeUnsortedLists(lists):
+    min_heap = []
+    
+    # 1. Push EVERY single node from every list into the heap
+    for node in lists:
+        while node:
+            # We use id(node) as a tie-breaker so Python doesn't compare node objects
+            heapq.heappush(min_heap, (node.val, id(node), node))
+            node = node.next
+            
+    dummy = ListNode()
+    current = dummy
+    
+    # 2. Pop them out. They will naturally come out in perfectly sorted order.
+    while min_heap:
+        val, _, node = heapq.heappop(min_heap)
+        current.next = node
+        current = current.next
+        
+    current.next = None # Clear the final pointer
+    return dummy.next
 
 
 # Helper to build linked list from Python list
@@ -106,3 +127,17 @@ Constraints:
 
 
 """
+
+
+
+steup live sessions
+career coaching session,
+mockup
+student associate.
+
+transition:::
+
+program advisor ->
+
+devik.kaul@interviewkickstart.com
+
